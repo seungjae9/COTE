@@ -50,7 +50,6 @@ for i in range(int(input())):
 for i in result:
     print(i)
 
-
-dict = {'A': 1, 'B': 2, 'C': 3}
-for key, val in dict.items():
-    print(key, val)
+# dict = {'A': 1, 'B': 2, 'C': 3}
+# for key, val in dict.items():
+#     print(key, val)
