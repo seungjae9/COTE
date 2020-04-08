@@ -1,3 +1,5 @@
+# 1592번 영식이와 친구들
+
 N, M, L = map(int, input().split())
 check = [1] + [0] * (N-1)
 ball = 0
