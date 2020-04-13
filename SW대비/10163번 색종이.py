@@ -7,8 +7,13 @@ for i in range(N):
 
 board = [[0] * 101 for _ in range(101)]
 
+for i in range(N):
+    for j in range(paper[i][0], paper[i][0] + paper[i][2]):
+        for x in range(paper[i][1], paper[i][1] + paper[i][3]):
+            board[j][x] = i + 1
 
 for i in range(N):
-    for j in range()
-    board[paper[i][0]][paper[i][1]] = 1
-
+    res = 0
+    for j in range(101):
+        res += board[j].count(i+1)
+    print(res)
