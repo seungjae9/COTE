@@ -2,49 +2,27 @@
 
 
 croa = input()
-ans = 0
-check = 0
+change = ["lj", "c=", "c-", "nj", "dz=", "d-", "z=", "s="]
+
+for i in change:
+    croa = croa.replace(i, "*")
 
 
+print(len(croa))
 
-
-
-
-
-# for i in range(check, len(croa)):
-#     if croa[i] == "c":
-#         if croa[i+1] == "=":
-#             ans +=1
-#             check +=2
-#         elif croa[i+1] == "-":
-#             ans +=1
-#             check +=2
-#     elif croa[i] == "d":
-#         if croa[i+1] == "z" and croa[i+2] == "=":
-#             ans +=1
-#             check +=3
-#         elif croa[i+1] == "-":
-#             ans +=1
-#             check +2
-#     elif croa[i] == "l":
-#         if croa[i+1] == "j":
-#             ans +=1
-#             check +=2
-#     elif croa[i] == "n":
-#         if croa[i+1] == "j":
-#             ans +=1
-#             check +=2
-#     elif croa[i] == "s":
-#         if croa[i+1] == "=":
-#             ans +=1
-#             check +=2
-#     elif croa[i] == "z":
-#         if croa[i+1] == "=":
-#             ans +=1
-#             check+=2
-#     # else:
-#         # ans +=1
-#         # check +=1
-#     # print(check)
-
-# print(ans)
+# if "lj" in croa:
+#     croa = croa.replace("lj", "*")
+# if "c=" in croa:
+#     croa = croa.replace("c=", "*")
+# if "s=" in croa:
+#     croa = croa.replace("s=", "*")
+# if "c-" in croa:
+#     croa = croa.replace("c-", "*")
+# if "nj" in croa:
+#     croa = croa.replace("nj", "*")
+# if "dz=" in croa:
+#     croa = croa.replace("dz=", "*")
+# if "d-" in croa:
+#     croa = croa.replace("d-", "*")
+# if "z=" in croa:
+#     croa = croa.replace("z=", "*")
