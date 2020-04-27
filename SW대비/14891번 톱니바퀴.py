@@ -1,4 +1,4 @@
-# 15662번 톱니바퀴(2)
+# 14891번 톱니바퀴
 
 condition = [list(map(int, input())) for _ in range(4)]
 K = int(input())
