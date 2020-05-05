@@ -85,3 +85,30 @@
 ```python
 		중복되는곳 함수 사용
 ```
+
+
+
+
+#### 연구소
+```python
+			순서 상관 없는 조합
+			 
+			
+			def npr(n, k, N, s):
+				if n == k:
+					print(p)    # 조합 나옴
+					
+				else:
+					for i in range(s, N):
+						if used[i] == 0:
+							used[i] = 1
+							p[n] = i + 1
+							npr(n+1, k, N, i)
+							used[i] = 0
+			
+			
+			used = [0] * N개중에(총 길이 몇개에서)
+			p = [0] * K개 뽑기(몇개 뽑을래)
+			npr(0, K개, N개, 0)
+			
+```

@@ -1,11 +1,12 @@
 # # 14502번 연구소
-#
-# # 조합으로 벽 세우는데 구하기(0, 0, 0 인데 좌표 찾아서 조합 3개 구하기)
-# # 벽세우고 bfs 돌리기
 
 a, b = map(int, input().split())
 board = [list(map(int, input().split())) for _ in range(a)]
 
+origin = [[0] * b for _ in range(a)]
+for i in range(a):
+    for j in range(b):
+        origin[i][j] = board[i][j]
 
 di = [-1, 0, 1, 0]
 dj = [0, 1, 0, -1]
@@ -23,10 +24,9 @@ def bfs(col, row):
                 board[ni][nj] = 2
                 q.append([ni, nj])
 
-    for xxx in range(len(board)):
-        print(board[xxx])
-    print()
+
 def npr(n, k, N, s, wall):
+    global maxvirus
     if n == k:
         newall = []
         for x in range(3):
@@ -38,9 +38,18 @@ def npr(n, k, N, s, wall):
                 if board[col][row] == 2:
                     bfs(col, row)
 
-        for x in range(3):
-            board[wall[p[x]-1][0]][wall[p[x]-1][1]] = 0
+        temp = 0
+        for search in range(a):
+            for search2 in range(b):
+                if board[search][search2] == 0:
+                    temp += 1
 
+        if maxvirus < temp:
+            maxvirus = temp
+
+        for origin1 in range(a):
+            for origin2 in range(b):
+                board[origin1][origin2] = origin[origin1][origin2]
 
     else:
         for i in range(s, N):
@@ -50,6 +59,8 @@ def npr(n, k, N, s, wall):
                 npr(n+1, k, N, i, wall)
                 used[i] = 0
 
+    return maxvirus
+
 wall = []
 for i in range(a):
     for j in range(b):
@@ -57,7 +68,9 @@ for i in range(a):
             wall.append([i, j])
 
 
+maxvirus = 0
 used = [0] * len(wall)
 p = [0] * 3
 npr(0, 3, len(wall), 0, wall)
 
+print(maxvirus)
