@@ -1,5 +1,122 @@
 # # 14503번 로봇 청소기
-#
+
+N, M = map(int, input().split())
+r, c, d = map(int, input().split())
+board = [list(map(int, input().split())) for _ in range(N)]
+
+
+def up(r, c, d):
+    d = 3
+    if 0 <= c - 1:
+        if board[r][c-1] == 0:
+            c -= 1
+
+    return r, c, d
+
+def left(r, c, d):
+    d = 2
+    if r + 1 < N:
+        if board[r+1][c] == 0:
+            r += 1
+    return r, c, d
+
+def down(r, c, d):
+    d = 1
+    if c + 1 < M:
+        if board[r][c+1] == 0:
+            c += 1
+
+    return r, c, d
+
+def right(r, c, d):
+    d = 0
+    if 0 <=  r - 1:
+        if board[r-1][c] == 0:
+            r -= 1
+
+    return r, c, d
+
+
+cnt = 0
+
+di = [-1, 0, 1, 0]
+dj = [0, 1, 0, -1]
+point = 0
+
+for i in range(20):
+    if board[r][c] == 0:
+        cnt += 1
+        board[r][c] = "X"
+
+    temp = 0
+    for i in range(4):
+        ni = r + di[i]
+        nj = c + dj[i]
+        if 0 <= ni < N and 0 <= nj < M and board[ni][nj] == 1 or 0 <= ni < N and 0 <= nj < M and board[ni][nj] == "X":
+            temp += 1
+
+    print(temp)
+    if temp == 4:
+        if d == 0:
+            if board[r+1][c] != 1:
+                r +=1
+            elif board[r+1][c] == 1:
+                point = 1
+        elif d == 1:
+            if board[r][c-1] != 1:
+                c -= 1
+            elif board[r + 1][c] == 1:
+                point = 1
+        elif d == 2:
+            if board[r-1][c] != 1:
+                r -= 1
+            elif board[r + 1][c] == 1:
+                point = 1
+        elif d == 3:
+            if board[r][c+1] != 1:
+                c += 1
+            elif board[r + 1][c] == 1:
+                point = 1
+
+    print(point)
+    if point == 1:
+        break
+
+    temp = 0
+
+    if d == 0:
+        r, c, d = up(r, c, d)
+    elif d == 3:
+        r, c, d = left(r, c, d)
+    elif d == 2:
+        r, c, d = down(r, c, d)
+    elif d == 1:
+        r, c, d = right(r, c, d)
+
+    print(r, c, d)
+
+
+print(cnt)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # N, M = map(int, input().split())
 # r, c, d = map(int, input().split())
 # board = [list(map(int, input().split())) for _ in range(N)]
