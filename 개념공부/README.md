@@ -48,3 +48,15 @@
 	3. Peak: front에 위치한 데이터 읽기(은행에서 다음 손님이 누구인지 확인)
 	4. front: 큐 맨 앞의 위치(index) 번호
 	5. rear: 큐 맨 뒤의 위치(index) 번호
+
+
+
+
+
+
+
+### Dequeue(디큐)
+			from collections import deque
+			q = dequeue()    # 비어있는 큐
+	        q = dequeue([1, 2, 3])   # 큐에 값있을 때
+
