@@ -1,6 +1,5 @@
 # 2164번 카드2
 
-
 from collections import deque
 N = int(input())
 q = deque([i+1 for i in range(N)])
