@@ -10,7 +10,7 @@
 
 ##### 사용방법
 
-![ex_screenshot](/img/stack.jpg)
+![ex_screenshot](/img/stack.JPG)
 
 
 
@@ -36,7 +36,7 @@
 
 ##### 사용방법
 
-![ex_screenshot](/img/Queue.Png)
+![ex_screenshot](/img/Queue.png)
 
 
 	1. Enqueue: 큐 맨 뒤에 데이터 추가, 
