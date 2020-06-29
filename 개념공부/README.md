@@ -10,9 +10,9 @@
 
 ##### 사용방법
 
-![ex_screenshot](./img/stack.jpg)
+![ex_screenshot](/img/stack.jpg)
 
-​	
+
 
 	1. push, append(삽입): 리스트 마지막에 데이터 넣기 
 						  마지막 위치 기억 변수 Top
@@ -36,7 +36,7 @@
 
 ##### 사용방법
 
-![ex_screenshot](./img/Queue.Png)
+![ex_screenshot](/img/Queue.Png)
 
 
 	1. Enqueue: 큐 맨 뒤에 데이터 추가, 
@@ -78,7 +78,7 @@
 
 		python itertools 내장함수 사용
 		itertools.combinations("원하는거", 몇개원하는지)
-
+	
 		ex)
 		import itertools
 		
