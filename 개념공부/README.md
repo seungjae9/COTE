@@ -90,3 +90,64 @@
 		A = itertools.combinations('ABC', 2)
 		print(list(A))
 				===>[('A', 'B'), ('A', 'C'), ('B', 'C')]
+
+
+
+##### BFS(Breadth First Search, 너비 우선탐색)
+###### 정의
+	한 노드에서 시작하여(통상 루트 노트) 다른 인접한 노드를 먼저 탐색하는 방법
+	시작 정점으로부터 가까운 정점을 먼저 방문하고 멀리 떨어져 있는 정점을 나중에 방문(넓게 탐색)
+
+![ex_screenshot](./img/BFS.gif)
+
+
+
+###### 특징
+
+	자료구조 큐(Queue)를 사용한다(선입선출 구조)
+	탐색시 방문 노드 표시 하기
+
+
+
+###### 구현
+
+	백준 2178번 미로 탐색 (https://www.acmicpc.net/problem/2178)
+	
+	N, M = map(int, input().split())
+	maze = [list(input()) for _ in range(N)]
+	di = [-1, 0, 1, 0]
+	dj = [0, 1, 0, -1]
+	
+	# 시간 계산
+	maze[0][0] = 1
+	
+	# 맨처음 방문할 노드 
+	q = [[0, 0]]
+	
+	# 방문할 노드가 있으면 while문
+	while q:
+	    # 방문 노드 하나 빼기(선입선출)
+	    a, b = q.pop(0)
+	
+	    # 위아래양옆 체크
+	    for x in range(4):
+	        ni = a + di[x]
+	        nj = b + dj[x]
+	        # 이런 조건에 맞을 경우
+	        if 0 <= ni < N and 0 <= nj < M and maze[ni][nj] == "1":
+	            # q에 다음 노드 집어넣기
+	            q.append([ni, nj])
+	            # 방문한 노드는 전에 있던 곳에 시간 +1 해줘야됨
+	            maze[ni][nj] = maze[a][b] + 1
+	    
+	
+	    # 움직이는거 볼수있음
+	    # for xxx in range(len(maze)):
+	    #     print(maze[xxx])
+	    # print()
+	
+	
+	print(maze[-1][-1])
+	
+
+
