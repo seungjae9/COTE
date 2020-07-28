@@ -139,15 +139,41 @@
 	            q.append([ni, nj])
 	            # 방문한 노드는 전에 있던 곳에 시간 +1 해줘야됨
 	            maze[ni][nj] = maze[a][b] + 1
-	    
-	
-	    # 움직이는거 볼수있음
-	    # for xxx in range(len(maze)):
-	    #     print(maze[xxx])
-	    # print()
-	
-	
-	print(maze[-1][-1])
-	
 
 
+​	
+​	    # 움직이는거 볼수있음
+​	    # for xxx in range(len(maze)):
+​	    #     print(maze[xxx])
+​	    # print()
+
+
+​	print(maze[-1][-1])
+
+
+
+
+
+
+
+## 정렬
+
+### 삽입정렬
+#### 정의
+	list(배열) 안에서 모든 요소를 앞에서부터 차례로 이미 정렬된 부분과 비교하여, 
+	자신의 위치를 찾아 삽입하는 알고리즘
+
+#### 장점
+* 사용이 매우 쉽다
+* 배열이 작을 경우 효율적이다
+
+
+
+#### 단점
+* 배열이 길거나, 뒤에 작은숫자가 몰려있을 경우 최악이다.
+* 시간복잡도가 최악의 경우 O(N**2
+
+
+
+#### 구현
+![ex_scrennshot](./img/insertsort.gif)
